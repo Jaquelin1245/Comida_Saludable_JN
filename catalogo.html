@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Comida Saludable</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo Tienda" />
+            <h1>Comida Saludable</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="carrito">
+            <button onclick="verCarrito()">Carrito (<span id="carrito-count">0</span>)</button>
+        </div>
+        
+    <!-- Popup del carrito -->
+<div id="carrito-popup">
+    <ul id="lista-carrito"></ul>
+    <p>Total: $<span id="total-carrito">0.00</span></p>
+    <button onclick="cerrarCarrito()">Cerrar</button>
+    <!-- Botón para solicitar envío -->
+    <button onclick="solicitarEnvio()">Solicitar Envío</button>
+</div>
+
+<!-- Formulario de solicitud de envío (oculto inicialmente) -->
+<div id="form-envio" style="display: none;">
+    <h3>Formulario de Envío</h3>
+    <form id="envio-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required><br><br>
+        
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" required><br><br>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" required><br><br>
+        
+        <button type="submit">Confirmar Envío</button>
+        <button type="button" onclick="cancelarEnvio()">Cancelar</button>
+    </form>
+</div>
+        
+    </header>
+
+
+
+    <!-- Sección de Catálogo -->
+    <section id="catalogo" class="catalogo">
+        <h2>Productos</h2>
+        <div class="productos">
+            <div class="producto" data-nombre="Ropa de Mujer" data-precio="20.00">
+                <img src="img/desayuno1.jpg" alt="Producto 1">
+                <h3>DESAYUNOS</h3>
+                <a href="desayuno.html">Ver Más</a>
+            </div>
+            
+            <div class="producto" data-nombre="Pantalón de mezclilla" data-precio="30.00">
+                <img src="img/almuerzo.jpg" alt="Producto 2">
+                <h3>ALMUERZOS</h3>
+                <a href="almuerzo.html">Ver Más</a>
+            </div>
+            
+            <div class="producto" data-nombre="Vestido de noche" data-precio="50.00">
+                <img src="img/cena1.jpg" alt="Producto 3">
+                <h3>CENAS</h3>
+                <a href="cena.html">Ver Más</a>
+            </div>
+            
+            <style>
+              h3{
+                padding: 20px;
+              }
+            
+              a {
+                text-decoration: none;
+                background-color: #e74c3c;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+              }
+
+              a:hover {
+                background-color: #c0392b;
+              }
+               </style>
+            
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Tienda de Ropa. Todos los derechos reservados.</p>
+        <p>Política de Privacidad | Términos y Condiciones</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

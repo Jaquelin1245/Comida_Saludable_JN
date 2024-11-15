@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CENAS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo Tienda" />
+            <h1>Comida Saludable</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Recetas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="carrito">
+            <button onclick="verCarrito()">Carrito (<span id="carrito-count">0</span>)</button>
+        </div>
+        
+    <!-- Popup del carrito -->
+<div id="carrito-popup">
+    <ul id="lista-carrito"></ul>
+    <p>Total: $<span id="total-carrito">0.00</span></p>
+    <button onclick="cerrarCarrito()">Cerrar</button>
+    <!-- Botón para solicitar envío -->
+    <button onclick="solicitarEnvio()">Solicitar Envío</button>
+</div>
+
+<!-- Formulario de solicitud de envío (oculto inicialmente) -->
+<div id="form-envio" style="display: none;">
+    <h3>Formulario de Envío</h3>
+    <form id="envio-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required><br><br>
+        
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" required><br><br>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" required><br><br>
+        
+        <button type="submit">Confirmar Envío</button>
+        <button type="button" onclick="cancelarEnvio()">Cancelar</button>
+    </form>
+</div>
+        
+    </header>
+
+
+
+    <!-- Sección de Catálogo -->
+    <section id="catalogo" class="catalogo">
+        <h2>CENAS</h2>
+        
+        <div class="productos">
+            <div class="producto" data-nombre="Ropa de Mujer" data-precio="20.00">
+                <img src="img/cenas/cena1.jpg" alt="Producto 1">
+                <h3>Albóndigas de quinoa</h3>
+                <button onclick="agregarAlCarrito('Albóndigas de quinoa', 20.00)">Agregar al carrito</button>
+            </div>
+            
+            <div class="producto" data-nombre="Pantalón de mezclilla" data-precio="30.00">
+                <img src="img/cenas/cena2.jpg" alt="Producto 2">
+                <h3>Tostada con crema de queso y aguacate</h3>
+                <button onclick="agregarAlCarrito('Tostada con crema de queso y aguacate', 30.00)">Agregar al carrito</button>
+            </div>
+            
+            <div class="producto" data-nombre="Vestido de noche" data-precio="50.00">
+                <img src="img/cenas/cena3.jpg" alt="Producto 3">
+                <h3>Tortilla de calabaza y acelga</h3>
+                <button onclick="agregarAlCarrito('Tortilla de calabaza y acelga', 50.00)">Agregar al carrito</button>
+            </div>
+            
+        <div class="productos">
+          <div class="producto" data-nombre="Ropa de Mujer" data-precio="20.00">
+            <img src="img/cenas/cena4.jpg" alt="Producto 4">
+            <h3>Pizza de coliflor</h3>
+            <button onclick="agregarAlCarrito('Pizza de coliflor', 20.00)">Agregar al carrito</button>
+          </div>
+
+          <div class="producto" data-nombre="Pantalón de mezclilla" data-precio="30.00">
+            <img src="img/cenas/cena5.jpg" alt="Producto 5">
+            <h3>Berenjenas rellenas</h3>
+            <button onclick="agregarAlCarrito('Berenjenas rellenas', 30.00)">Agregar al carrito</button>
+          </div>
+
+          <div class="producto" data-nombre="Vestido de noche" data-precio="50.00">
+            <img src="img/cenas/cena6.jpg" alt="Producto 6">
+            <h3>Tortilla de espinaca</h3>
+            <button onclick="agregarAlCarrito('Tortilla de espinaca', 50.00)">Agregar al carrito</button>
+          </div>
+            
+        <div class="productos">
+          <div class="producto" data-nombre="Ropa de Mujer" data-precio="20.00">
+            <img src="img/cenas/cena7.jpg" alt="Producto 7">
+            <h3>Brochetas de pollo al Pimentón con verduras</h3>
+            <button onclick="agregarAlCarrito('Brochetas de pollo al Pimentón con verduras', 20.00)">Agregar al carrito</button>
+          </div>
+
+          <div class="producto" data-nombre="Pantalón de mezclilla" data-precio="30.00">
+            <img src="img/cenas/cena8.jpg" alt="Producto 8">
+            <h3>Salteado de verduras con huevo frito</h3>
+            <button onclick="agregarAlCarrito('Salteado de verduras con huevo frito', 30.00)">Agregar al carrito</button>
+          </div>
+
+          <div class="producto" data-nombre="Vestido de noche" data-precio="50.00">
+            <img src="img/cenas/cena9.jpg" alt="Producto 9">
+            <h3>Tortilla de brócoli</h3>
+            <button onclick="agregarAlCarrito('Tortilla de brócoli', 50.00)">Agregar al carrito</button>
+          </div>
+            
+          <div class="producto" data-nombre="Vestido de noche" data-precio="50.00">
+            <img src="img/cenas/cena10.jpg" alt="Producto 10">
+            <h3>Sándwich de calabacín</h3>
+            <button onclick="agregarAlCarrito('Sándwich de calabacín', 50.00)">Agregar al carrito</button>
+          </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Tienda de Ropa. Todos los derechos reservados.</p>
+        <p><a href="privacy-policy.html">Política de Privacidad</a> | <a href="terms-and-conditions.html">Términos y Condiciones</a></p>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
